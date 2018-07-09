@@ -1,4 +1,3 @@
-const botconfig = require('./botconfig.json')
 const Discord = require('discord.js')
 const fs = require('fs')
 const bot = new Discord.Client({disableEveryone: true})
@@ -8,6 +7,9 @@ const requestroles = require('./requestroles.js')
 const showcase = require('./showcase.js')
 const request = require('./request.js')
 bot.commands = new Discord.Collection()
+
+if (fs.existsSync('botconfig.js'))
+  Object.assign(process.env, require('./botconfig.js'))
 
 fs.readdir('./commands/', (err, files) => {
 
@@ -48,7 +50,7 @@ bot.on('message', message => {
   if (message.channel.name == 'showcase') showcase(message)
   if (message.channel.name == 'request') request(message)
 
-  let prefix = botconfig.prefix
+  let prefix = process.env.PREFIX
   let messageArray = message.content.split(' ')
   let cmd = messageArray[0]
   if (!cmd.startsWith(prefix)) return
@@ -57,4 +59,4 @@ bot.on('message', message => {
   if (commandfile) commandfile.run(bot, message, args)
 })
 
-bot.login('NDYxMjUwMjMwMzQwNTUwNjU3.DhQkSA.6Y3mdYBjWs-Z3UZRNG5BYVrpEPE')
+bot.login(process.env.TOKEN)
