@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   const embedMessage = args.join(" ");
   message.delete().catch((err) => {});
   const embed = new Discord.RichEmbed()
-    .setTitle(embedMessage);
+    .setDescription(embedMessage);
 
   message.channel.send(embed);
 }

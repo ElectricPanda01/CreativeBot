@@ -6,6 +6,7 @@ module.exports.run = async (bot, message, args) => {
   let kReason = args.join(" ").slice(21);
   if(!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send("You do not have permission to do that.");
   if(kUser.hasPermission("MANAGE_SERVER")) return message.channel.send("That person can't be kicked!");
+  message.delete().catch();
 
   let kickEmbed = new Discord.RichEmbed()
   .setDescription("~Kick~")
