@@ -11,7 +11,7 @@ module.exports = function (msg) {
     let check1 = lines[0].startsWith('Name: ')
     let check2 = lines[1].startsWith('Details: ')
     let check3 = lines[2].startsWith('Contact info: ')
-    if (checks.every(e => e)) {
+    if (check1 && check2 && check3) {
       // do stuff
     } else {
       correctFormat(msg)
