@@ -4,6 +4,7 @@
   "description": "A general bot for the Graphic Design Discord Server.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ElectricPanda",
