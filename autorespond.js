@@ -1,4 +1,3 @@
-const Discord = require('discord.js')
 const client = require('./index.js')
 const responseObject = {
   'gg': 'Eh....just kidding! Yeah, GG!'
