@@ -59,8 +59,4 @@ bot.on('message', message => {
   if (commandfile) commandfile.run(bot, message, args)
 })
 
-client.on('serverNewMember', function(server, user) {
-  user.addTo(server.roles.get("Member"));
-});
-
 bot.login(process.env.TOKEN)
