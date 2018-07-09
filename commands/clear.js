@@ -1,6 +1,6 @@
 module.exports.run = async (bot, message, args) => {
-  
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No.");
+
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have permission to do that.");
   if(!args[0]) return message.channel.send("no");
 
   message.channel.bulkDelete(args[0]).then(() => {

@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 module.exports.run = async (bot, message, args) => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("Can't find user!");
-    let bReason = args.join(" ").slice(19);
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("No can do pal!");
+    let bReason = args.join(" ").slice(21);
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You do not have permission to do that.");
     if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("That person can't be kicked!");
 
     let banEmbed = new Discord.RichEmbed()
