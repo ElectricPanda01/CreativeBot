@@ -1,1 +1,2 @@
-# CreativeBot
+# Creative Bot
+A bot for stuff
