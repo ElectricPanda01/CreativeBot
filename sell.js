@@ -9,12 +9,12 @@ module.exports = function (msg) {
   }
   if (lines.length === 6) {
     let checks = [
-      /^Name: /i.test(lines[0]),
-      /^Portfolio: /i.test(lines[1]),
-      /^Type of work: /i.test(lines[2]),
-      /^Time ?Zone( and | ?\/ ?)Availability: /i.test(lines[3]),
-      /^Contact info: /i.test(lines[4]),
-      /^Other: /i.test(lines[5])
+      /^Name: ?.+$/i.test(lines[0]),
+      /^Portfolio: ?.+$/i.test(lines[1]),
+      /^Type of work: ?.+$/i.test(lines[2]),
+      /^Time ?Zone( and | ?\/ ?)Availability: ?.+$/i.test(lines[3]),
+      /^Contact info: ?.+$/i.test(lines[4]),
+      /^Other: ?.+$/i.test(lines[5])
     ]
     if (checks.every(e => e)) {
       // do stuff

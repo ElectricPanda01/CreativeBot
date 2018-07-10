@@ -10,8 +10,8 @@ module.exports = function (msg) {
   if (lines.length === 2) {
     let checks = [
       // Check Format
-      /^Role: /i.test(lines[0]),
-      /^Portfolio: /i.test(lines[1])
+      /^Role: ?.+$/i.test(lines[0]),
+      /^Portfolio: ?.+$/i.test(lines[1])
     ]
     if (checks.every(e => e)) {
       // do stuff
