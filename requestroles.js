@@ -10,8 +10,8 @@ module.exports = function (msg) {
   if (lines.length === 2) {
     let checks = [
       // Check Format
-      lines[0].startsWith('Role: '),
-      lines[1].startsWith('Portfolio: ')
+      /^Role: /i.test(lines[0]),
+      /^Portfolio: /i.test(lines[1])
     ]
     if (checks.every(e => e)) {
       // do stuff
