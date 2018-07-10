@@ -10,10 +10,10 @@ module.exports = function (msg) {
   if (lines.length === 4) {
     let checks = [
       // Check Format
-      lines[0].startsWith('Name: '),
-      lines[1].startsWith('Price range: '),
-      lines[2].startsWith('Details: '),
-      lines[3].startsWith('Contact info: '),
+      /^Name: /i.test(lines[0]),
+      /^Price range: /i.test(lines[1]),
+      /^Details: /i.test(lines[2]),
+      /^Contact info: /i.test(lines[3]),
       // Check Data
       !lines[1].match(/free|\$0|0/i)
     ]
