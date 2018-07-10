@@ -11,7 +11,7 @@ module.exports = function (msg) {
     let checks = [
       // Check Format
       /^Name: ?.+$/i.test(lines[0]),
-      /^Price range: ?.+$/i.test(lines[1]),
+      /^Price range: [$¥€£]?[1-9]\d*$/i.test(lines[1]),
       /^Details: ?.+$/i.test(lines[2]),
       /^Contact info: ?.+$/i.test(lines[3])
     ]
