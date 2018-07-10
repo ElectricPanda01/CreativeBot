@@ -7,7 +7,7 @@ module.exports = function (msg) {
     msg.delete()
     msg.author.send('**Showcase Rules**\n\n- We only accept ``.png`` and ``.jpg`` files!\n- If you are responding to someones showcase, do it in the corresponding channel.\n*If you have any questions, contact <244279642092077056> or [Panda]#3431*')
   }
-  if (files.length && /\.(png|jpg)$/.test(files[0].filename)) {
+  if (files.length && /\.(pn|jpe?)g$/.test(files[0].filename)) {
   } else {
     correctFormat(msg)
   }

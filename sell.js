@@ -8,12 +8,14 @@ module.exports = function (msg) {
     msg.author.send('**Sell Format**\n\nTo ensure organization and everyone getting a fair chance to find an artist, please follow this format:\n```Name:\nPortfolio:\nType of work:\nTime Zone and Availability:\nContact info:\nOther:```\n*If you have any questions, contact <244279642092077056> or [Panda]#3431*')
   }
   if (lines.length === 6) {
-    let check1 = lines[0].startsWith('Name: ')
-    let check2 = lines[1].startsWith('Portfolio: ')
-    let check3 = lines[2].startsWith('Type of work: ')
-    let check4 = lines[3].startsWith('Time Zone and Availability: ')
-    let check5 = lines[4].startsWith('Contact info: ')
-    let check6 = lines[5].startsWith('Other: ')
+    let checks = [
+      /^Name: /i.test(lines[0]),
+      /^Portfolio: /i.test(lines[1]),
+      /^Type of work: /i.test(lines[2]),
+      /^Time ?Zone( and | ?\/ ?)Availability: /i.test(lines[3]),
+      /^Contact info: /i.test(lines[4]),
+      /^Other: /i.test(lines[5])
+    ]
     if (checks.every(e => e)) {
       // do stuff
     } else {
