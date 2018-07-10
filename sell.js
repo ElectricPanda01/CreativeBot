@@ -12,7 +12,7 @@ module.exports = function (msg) {
       /^Name: /i.test(lines[0]),
       /^Portfolio: /i.test(lines[1]),
       /^Type of work: /i.test(lines[2]),
-      /^Time Zone( and | ?\/ ?)Availability: /i.test(lines[3]),
+      /^Time ?Zone( and | ?\/ ?)Availability: /i.test(lines[3]),
       /^Contact info: /i.test(lines[4]),
       /^Other: /i.test(lines[5])
     ]
