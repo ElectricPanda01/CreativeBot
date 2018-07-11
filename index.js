@@ -29,7 +29,7 @@ fs.readdir('./commands/', (err, files) => {
 
 const responseObject = {
   'thic': "Yeah. With three C's",
-  'oof': "The FitnessGram™ Pacer Test is a multistage aerobic capacity test that..."
+  'oof': "The FitnessGram™ Pacer Test is a multistage aerobic capacity test that...",
 }
 bot.on('message', (message) => {
   if (responseObject[message.content]) {
