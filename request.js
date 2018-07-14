@@ -22,3 +22,4 @@ module.exports = function (msg) {
     correctFormat(msg)
   }
 }
+module.exports.channel = 'request'

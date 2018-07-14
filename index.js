@@ -1,15 +1,14 @@
-const Discord = require('discord.js')
+require('dotenv').config()
 const fs = require('fs')
+const Discord = require('discord.js')
 const bot = new Discord.Client({disableEveryone: true})
-const buy = require('./buy.js')
-const sell = require('./sell.js')
-const requestroles = require('./requestroles.js')
-const showcase = require('./showcase.js')
-const request = require('./request.js')
+const listeners = [
+  'buy', 'sell', 'requestroles',
+  'showcase', 'request'
+]
 bot.commands = new Discord.Collection()
-
-if (fs.existsSync('botconfig.js'))
-  Object.assign(process.env, require('./botconfig.js'))
+const RedisDB = require('./RedisDB.js')
+const data = new RedisDB()
 
 fs.readdir('./commands/', (err, files) => {
 
@@ -39,25 +38,35 @@ bot.on('message', (message) => {
 
 bot.on('ready', () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`)
+  console.log(`Prefix: ${process.env.PREFIX}`)
   bot.user.setActivity('The Channels!', {type: 'WATCHING'})
 })
 
 bot.on('message', message => {
   if (message.author.bot) return
-  if (message.channel.type === 'dm') return
-  if (message.channel.name == 'to-buy') buy(message)
-  if (message.channel.name == 'to-sell') sell(message)
-  if (message.channel.name == 'role-assignment') requestroles(message)
-  if (message.channel.name == 'showcase') showcase(message)
-  if (message.channel.name == 'request') request(message)
+  // listeners.forEach(name => {
+  //   let listener = require(`./${name}.js`)
+  //   if (message.channels.name === listener.channel)
+  //     listener(message)
+  // })
 
   let prefix = process.env.PREFIX
-  let messageArray = message.content.split(' ')
+  let messageArray = message.content.split(/ +/)
   let cmd = messageArray[0]
   if (!cmd.startsWith(prefix)) return
   let args = messageArray.slice(1)
   let commandfile = bot.commands.get(cmd.slice(prefix.length))
-  if (commandfile) commandfile.run(bot, message, args)
+  
+  if (commandfile) {
+    if (commandfile.dm != (message.channel.type == 'dm')) return
+    commandfile.run.bind({
+      data: data,
+      server: bot.guilds.get('406827789594001410'),
+      redisError (err) {
+        console.log(err)
+      }
+    })(bot, message, args)
+  }
 })
 
 bot.login(process.env.TOKEN)

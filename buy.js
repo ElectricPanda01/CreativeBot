@@ -22,4 +22,6 @@ module.exports = function (msg) {
     }
   } else {
     correctFormat(msg)
-  }}
+  }
+}
+module.exports.channel = 'to-buy'

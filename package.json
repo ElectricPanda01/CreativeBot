@@ -12,6 +12,7 @@
   "dependencies": {
     "async": "^2.6.1",
     "discord.js": "^11.3.2",
+    "dotenv": "^6.0.0",
     "ms": "^2.1.1"
   }
 }

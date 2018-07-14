@@ -1,4 +1,12 @@
-node_modules/
+# Node
+node_modules
 package-lock.json
-botconfig.json
-.vs/
+
+# IDE
+.vs
+
+# Database
+dump.rdb
+
+# Configuration
+.env

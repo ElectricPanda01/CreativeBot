@@ -12,3 +12,4 @@ module.exports = function (msg) {
     correctFormat(msg)
   }
 }
+modules.exports.channel = 'showcase'
