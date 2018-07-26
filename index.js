@@ -1,11 +1,11 @@
 const Discord = require('discord.js')
 const fs = require('fs')
 const bot = new Discord.Client({disableEveryone: true})
-const buy = require('./buy.js')
-const sell = require('./sell.js')
-const requestroles = require('./requestroles.js')
+const buy = require('./to-buy.js')
+const sell = require('./to-sell.js')
+const requestroles = require('./role-assignment.js')
 const showcase = require('./showcase.js')
-const request = require('./request.js')
+const request = require('./free-request.js')
 bot.commands = new Discord.Collection()
 
 if (fs.existsSync('botconfig.js'))
@@ -48,7 +48,7 @@ bot.on('message', message => {
   if (message.channel.name == 'to-sell') sell(message)
   if (message.channel.name == 'role-assignment') requestroles(message)
   if (message.channel.name == 'showcase') showcase(message)
-  if (message.channel.name == 'request') request(message)
+  if (message.channel.name == 'free-request') request(message)
 
   let prefix = process.env.PREFIX
   let messageArray = message.content.split(' ')
