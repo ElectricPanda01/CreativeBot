@@ -5,9 +5,9 @@ module.exports = function (msg) {
   function correctFormat (msg) {
     msg.author.send(`**Your Message**\n\`\`\`\n${msg.content}\n\`\`\``)
     msg.delete()
-    msg.author.send('**Role Assignent Format**\n\nTo ensure organization and everyone getting a fair chance to find an artist, please follow this format:\n```Role: \nPortfolio: \nEmployment: ```\n\n*If you have any questions, contact <244279642092077056> or [Panda]#3431*')
+    msg.author.send('**Role Assignment Format**\n\nTo ensure organization and everyone getting a fair chance to find an artist, please follow this format:\n```Role: \nPortfolio: \nEmployment: ```\n\n*If you have any questions, contact <244279642092077056> or [Panda]#3431*')
   }
-  if (lines.length === 2) {
+  if (lines.length === 3) {
     let checks = [
       // Check Format
       /^Role: ?.+$/i.test(lines[0]),
