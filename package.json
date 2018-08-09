@@ -1,7 +1,7 @@
 {
   "name": "graphic-design-bot",
   "version": "1.0.0",
-  "description": "A general bot for the Graphic Design Discord Server.",
+  "description": "A general bot for Art Discord Servers.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

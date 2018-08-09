@@ -38,7 +38,7 @@ bot.on('message', (message) => {
 
 bot.on('ready', () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`)
-  bot.user.setActivity('The Channels!', {type: 'WATCHING'})
+  bot.user.setActivity('The Channels! /help', {type: 'WATCHING'})
 })
 
 bot.on('message', message => {
