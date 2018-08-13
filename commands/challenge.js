@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     .addField(":military_medal: :military_medal: :military_medal: Challenge :military_medal: :military_medal: :military_medal:",
       "Challenges gives you a way to get out of that creative block that many of us find ourselves in.")
     .addField("Categories",
-      "/challenge logo - Logo Challenges\n/challenge illustration - Illustration Challenges\n/challenge photography - Photography Challenges")
+      "/challenge graphics - Graphics Challenges\n/challenge illustration - Illustration Challenges\n/challenge photography - Photography Challenges")
     .setFooter("If you have any submissions, contact <244279642092077056> or [Panda]#3431");
 
 //Graphics Challenge
