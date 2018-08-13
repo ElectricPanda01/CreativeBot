@@ -9,17 +9,17 @@ module.exports.run = async (bot, message, args) => {
     .addField(":military_medal: :military_medal: :military_medal: Challenge :military_medal: :military_medal: :military_medal:",
       "Challenges gives you a way to get out of that creative block that many of us find ourselves in.")
     .addField("Categories",
-      "/challenge logo - Logo Challenges\n/challenge illustration - Illustration Challenges\n/challenge icon - Icon Challenges")
+      "/challenge logo - Logo Challenges\n/challenge illustration - Illustration Challenges\n/challenge photography - Photography Challenges")
     .setFooter("If you have any submissions, contact <244279642092077056> or [Panda]#3431");
 
-//Logo Challenge
+//Graphics Challenge
 
-    let replies1 = ["#1: Design a minimal logo using 5 triangles.", "#2: Redesign a logo from your neighboring sandwich/pizza shop!", "#3: Design a Logo based around the elements fire and water.", "#4: Design a Logo based on a neighboring nonprofit (or just one that you are familiar with).", "#5: Design a Logo based on the letters 'AWM'.", "#6: Design a Logo based on the first thing you see on Pinterest (or Facebook)."];
+    let replies1 = ["#1: Design a minimal logo using 5 triangles.", "#2: Redesign a logo from your neighboring sandwich/pizza shop!", "#3: Design a Logo based around the elements fire and water.", "#4: Design a Logo based on a neighboring nonprofit (or just one that you are familiar with).", "#5: Design a Logo based on the letters 'AWM'.", "#6: Design a Logo based on the first thing you see on Pinterest (or Facebook).", "#7: Create a logo for a cookie company.", "#8: Redesign the current Discord logo."];
 
     let result1 = Math.floor((Math.random() * replies1.length));
     let question1 = args.slice(0).join(" ");
 
-    let logochallengeembed = new Discord.RichEmbed()
+    let graphicschallengeembed = new Discord.RichEmbed()
     .setAuthor(message.author.tag)
     .setColor("#41e5f4")
     .addField("Challenge", replies1[result1])
@@ -38,14 +38,14 @@ module.exports.run = async (bot, message, args) => {
     .addField("Challenge", replies2[result2])
     .setFooter("If you have any submissions, contact <244279642092077056> or [Panda]#3431");
 
-//Icon Challenges
+//Photography Challenges
 
     let replies3 = ["No submissions yet. Please feel free to submit ideas!"];
 
     let result3 = Math.floor((Math.random() * replies3.length));
     let question3 = args.slice(0).join(" ");
 
-    let iconchallengeembed = new Discord.RichEmbed()
+    let photographychallengeembed = new Discord.RichEmbed()
     .setAuthor(message.author.tag)
     .setColor("#41e5f4")
     .addField("Challenge", replies3[result3])
@@ -54,9 +54,9 @@ module.exports.run = async (bot, message, args) => {
 //Subcommands
 
     if(!args[0]) return message.channel.send(challengeembed);
-    if(args[0] === "logo") return message.channel.send(logochallengeembed);
+    if(args[0] === "logo") return message.channel.send(graphicschallengeembed);
     if(args[0] === "illustration") return message.channel.send(illustrationchallengeembed);
-    if(args[0] === "icon") return message.channel.send(iconchallengeembed);
+    if(args[0] === "photography") return message.channel.send(photographychallengeembed);
 }
 
 
