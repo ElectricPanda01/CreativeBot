@@ -54,7 +54,7 @@ module.exports.run = async (bot, message, args) => {
 //Subcommands
 
     if(!args[0]) return message.channel.send(challengeembed);
-    if(args[0] === "logo") return message.channel.send(graphicschallengeembed);
+    if(args[0] === "graphics") return message.channel.send(graphicschallengeembed);
     if(args[0] === "illustration") return message.channel.send(illustrationchallengeembed);
     if(args[0] === "photography") return message.channel.send(photographychallengeembed);
 }
