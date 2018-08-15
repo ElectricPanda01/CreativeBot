@@ -15,6 +15,8 @@ module.exports.run = async (bot, message, args) => {
 
 //Help Mod
 
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have permission to do that.");
+  
   let helpmodembed = new Discord.RichEmbed()
   .setTitle(":gear: :gear: :gear: [Moderator] Help Database :gear: :gear: :gear: ")
   .setDescription("Hello Moderators! Issue with a command? Hope this helps.")
