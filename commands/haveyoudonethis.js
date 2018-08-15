@@ -2,7 +2,6 @@ const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have permission to do that.");
-  if(!args[0]) return message.channel.send("no");
 
   let ughembed = new Discord.RichEmbed()
   .setColor('#42f471')
