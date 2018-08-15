@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Moderation",
     "/tempmute [user] [time][s,m,h]\n/warnings [user]\n/warn [user]\n/kick [user]\n/ban [user] [reason]\n/clear [# of messages]")
   .addField("Utility",
-    "/addrole [role]\n/removerole [role]\n/say [message]\n/sayembed [message]\n/help mod");
+    "/addrole [role]\n/removerole [role]\n/say [message]\n/sayembed [message]\n/ugh -- for people asking dumb questions.\n/wrong -- for people posting in the wrong channel.\n/help mod");
 
 //Subcommands
 
