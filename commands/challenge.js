@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
 
 //Graphics Challenge
 
-    let replies1 = ["#1: Design a minimal logo using 5 triangles.", "#2: Redesign a logo from your neighboring sandwich/pizza shop!", "#3: Design a Logo based around the elements fire and water.", "#4: Design a Logo based on a neighboring nonprofit (or just one that you are familiar with).", "#5: Design a Logo based on the letters 'AWM'.", "#6: Design a Logo based on the first thing you see on Pinterest (or Facebook).", "#7: Create a logo for a cookie company.", "#8: Redesign the current Discord logo."];
+    let replies1 = ["#1: Design a minimal logo using 5 triangles.", "#2: Redesign a logo from your neighboring sandwich/pizza shop!", "#3: Design a Logo based around the elements fire and water.", "#4: Design a Logo based on a neighboring nonprofit (or just one that you are familiar with).", "#5: Design a Logo based on the letters 'AWM'.", "#6: Design a Logo based on the first thing you see on Pinterest (or Facebook).", "#7: Create a logo for a cookie company.", "#8: Redesign the current Discord logo. ", "#9: Design/Redesign a logo for a one of your local coffee shops/cafes.", "#10: Make a comedy movie poster only using green and purple (Help: Maybe something revolving around the Joker?).", "#11: Create a new UI for Google.com", "#12: Design a poster advertisement for your favourite film."];
 
     let result1 = Math.floor((Math.random() * replies1.length));
     let question1 = args.slice(0).join(" ");
@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args) => {
 
 //Photography Challenges
 
-    let replies3 = ["No submissions yet. Please feel free to submit ideas!"];
+    let replies3 = ["#1: Use water or a puddle as a reflection.", "#2: Look up 'Steel Wool Photography' and do it!"];
 
     let result3 = Math.floor((Math.random() * replies3.length));
     let question3 = args.slice(0).join(" ");
