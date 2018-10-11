@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
+  if(!message.member.hasPermission("SEND_MESSAGES")) return message.reply("You do not have permission to do that.");
   let bicon = bot.user.displayAvatarURL;
   let helpembed = new Discord.RichEmbed()
   .setTitle(":gear: :gear: :gear: Help Database :gear: :gear: :gear: ")
